@@ -1,100 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join Form | Coming Loots</title>
-  <style>
-    body {
-      font-family: "Poppins", Arial, sans-serif;
-      background: linear-gradient(135deg, #f0f4ff, #d9e4ff);
-      margin: 0;
-      padding: 25px;
-      text-align: center;
-    }
-    #google_translate_element {
-      margin-bottom: 15px;
-      text-align: right;
-    }
-    .container {
-      max-width: 850px;
-      margin: auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 10px;
-    }
-    h2 {
-      color: #222;
-      font-size: 28px;
-    }
-    p {
-      color: #555;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-    .telegram {
-      background: linear-gradient(90deg, #0088cc, #0077b3);
-      color: white;
-      padding: 14px 28px;
-      border-radius: 50px;
-      display: inline-block;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 17px;
-      margin-top: 25px;
-      box-shadow: 0 4px 10px rgba(0,136,204,0.3);
-      transition: 0.3s ease;
-    }
-    .telegram:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(0,136,204,0.4);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coming Loots Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  .container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+  }
+  h2 {
+    color: #222;
+    font-size: 34px;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease forwards;
+  }
+  p {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease forwards;
+  }
+  iframe {
+    width: 100%;
+    height: 650px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 15px;
+    animation: fadeIn 1.2s ease forwards;
+  }
+  .telegram {
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 25px;
+    box-shadow: 0 6px 15px rgba(238,9,121,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .telegram:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(238,9,121,0.4);
+  }
+  /* Countdown Timer */
+  .countdown {
+    font-size: 20px;
+    color: #ff3d00;
+    margin-bottom: 20px;
+    font-weight: 700;
+    animation: fadeIn 1.5s ease forwards;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1;}
+  }
+  @keyframes fadeInDown {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+</style>
 </head>
 <body>
-  <!-- Google Translate Dropdown -->
-  <div id="google_translate_element"></div>
 
-  <div class="container">
-    <h2>👋 Please Fill Out This Form</h2>
-    <p>
-      نیچے دیا گیا فارم بھریں تاکہ ہم آپ سے جلدی رابطہ کر سکیں۔<br>
-      नीचे दिया गया फॉर्म भरें ताकि हम आपसे जल्दी संपर्क कर सकें।<br>
-      Fill all required details carefully and click “Submit”.
-    </p>
+<div class="container">
+  <h2>🚀 Fill the Form Now!</h2>
+  <p>
+    نیچے دیا گیا فارم بھریں تاکہ ہم آپ سے جلدی رابطہ کر سکیں۔<br>
+    Fill all required details carefully to get exclusive updates and offers.
+  </p>
 
-    <iframe src="https://whatsform.com/0f1wzj" title="Join Form"></iframe>
+  <div class="countdown" id="countdown">⏳ Offer ends in: 10:00 minutes</div>
 
-    <p style="margin-top:20px; font-size:18px; font-weight:bold;">
-      ✅ After submitting, you’ll get confirmation on WhatsApp.
-    </p>
+  <!-- WhatsForm iframe (Urdu content) -->
+  <iframe src="https://whatsform.com/0f1wzj" title="Coming Loots Form"></iframe>
 
-    <a class="telegram" href="https://t.me/comingloots" target="_blank">
-      🚀 Join our Telegram for more exclusive offers and loots
-    </a>
-  </div>
+  <p style="margin-top:20px; font-size:18px; font-weight:bold;">
+    ✅ After submitting, you’ll get confirmation on WhatsApp.
+  </p>
 
-  <!-- Google Translate Script -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'ur',
-        includedLanguages: 'en,hi,ur',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
+  <a class="telegram" href="https://t.me/comingloots" target="_blank">
+    🌟 Join our Telegram for more exclusive offers and loots
+  </a>
+</div>
+
+<script>
+  // Countdown timer (10 minutes)
+  let timeLeft = 600;
+  const countdownEl = document.getElementById('countdown');
+
+  const countdownTimer = setInterval(() => {
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+    countdownEl.textContent = `⏳ Offer ends in: ${minutes}:${seconds < 10 ? '0' + seconds : seconds} minutes`;
+    timeLeft--;
+    if(timeLeft < 0){
+      clearInterval(countdownTimer);
+      countdownEl.textContent = '⏳ Offer has ended!';
     }
-  </script>
-
-  <script type="text/javascript"
-  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-  </script>
+  }, 1000);
+</script>
 
 </body>
 </html>
