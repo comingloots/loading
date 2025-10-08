@@ -12,6 +12,10 @@
       padding: 25px;
       text-align: center;
     }
+    #google_translate_element {
+      margin-bottom: 15px;
+      text-align: right;
+    }
     .container {
       max-width: 850px;
       margin: auto;
@@ -55,9 +59,13 @@
   </style>
 </head>
 <body>
+  <!-- Google Translate Dropdown -->
+  <div id="google_translate_element"></div>
+
   <div class="container">
     <h2>👋 Please Fill Out This Form</h2>
     <p>
+      نیچے دیا گیا فارم بھریں تاکہ ہم آپ سے جلدی رابطہ کر سکیں۔<br>
       नीचे दिया गया फॉर्म भरें ताकि हम आपसे जल्दी संपर्क कर सकें।<br>
       Fill all required details carefully and click “Submit”.
     </p>
@@ -72,5 +80,21 @@
       🚀 Join our Telegram for more exclusive offers and loots
     </a>
   </div>
+
+  <!-- Google Translate Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'ur',
+        includedLanguages: 'en,hi,ur',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <script type="text/javascript"
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
+
 </body>
 </html>
