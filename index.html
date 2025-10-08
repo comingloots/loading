@@ -118,7 +118,7 @@
   const countdownTimer = setInterval(() => {
     let minutes = Math.floor(timeLeft / 60);
     let seconds = timeLeft % 60;
-    countdownEl.textContent = `⏳ Limited Agents Have: ${minutes}:${seconds < 10 ? '0' + seconds : seconds} minutes`;
+    countdownEl.textContent = `⏳ Limited Agents: ${minutes}:${seconds < 10 ? '0' + seconds : seconds} minutes`;
     timeLeft--;
     if(timeLeft < 0){
       clearInterval(countdownTimer);
@@ -129,6 +129,7 @@
 
 </body>
 </html>
+
 
 
 
