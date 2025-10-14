@@ -10,10 +10,12 @@
       font-family: Arial, sans-serif;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       background-color: #f5f5f5;
       text-align: center;
+      padding: 20px;
     }
 
     a.site-link {
@@ -27,6 +29,7 @@
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 30px;
     }
 
     a.site-link:hover {
@@ -34,103 +37,48 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.25);
     }
 
-    /* Floating button common style */
-    .float-btn {
-      position: fixed;
-      bottom: 20px;
-      z-index: 9999;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
+    /* Telegram Button below site link */
+    #telegram-button {
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background-color: #0088cc;
+      color: white;
       text-decoration: none;
-      animation: pulse 2.5s infinite;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .float-btn img {
-      width: 32px;
-      height: 32px;
+    #telegram-button img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
       filter: brightness(100%) invert(1);
     }
 
-    .float-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    #telegram-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
     }
 
-    /* Telegram button */
-    #telegram-float {
-      left: 20px;
-      background-color: #0088cc;
-    }
-
-    #telegram-float::after {
-      content: "Join Telegram";
-      position: absolute;
-      left: 70px;
-      background: #0088cc;
-      color: white;
-      padding: 6px 10px;
-      border-radius: 6px;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-
-    #telegram-float:hover::after { opacity: 1; }
-
-    /* WhatsApp button */
-    #whatsapp-float {
-      right: 20px;
-      background-color: #25d366;
-    }
-
-    #whatsapp-float::after {
-      content: "Chat on WhatsApp";
-      position: absolute;
-      right: 70px;
-      background: #25d366;
-      color: white;
-      padding: 6px 10px;
-      border-radius: 6px;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-
-    #whatsapp-float:hover::after { opacity: 1; }
-
-    /* Pulse animation */
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px rgba(0,0,0,0.2); }
-      50% { box-shadow: 0 0 25px rgba(0,0,0,0.35); }
-      100% { box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+    /* Optional descriptive text */
+    #telegram-text {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #333;
+      max-width: 300px;
+      line-height: 1.4;
     }
 
     @media (max-width: 480px) {
-      .float-btn {
-        width: 52px;
-        height: 52px;
-        bottom: 15px;
-      }
-      .float-btn img {
-        width: 28px;
-        height: 28px;
-      }
-      #telegram-float::after,
-      #whatsapp-float::after { display: none; }
+      a.site-link { padding: 15px 25px; font-size: 18px; }
+      #telegram-button { padding: 10px 16px; font-size: 14px; }
+      #telegram-button img { width: 20px; height: 20px; }
+      #telegram-text { font-size: 14px; }
     }
   </style>
 </head>
@@ -141,15 +89,16 @@
     Open Job Loots Site
   </a>
 
-  <!-- Telegram Floating Button -->
-  <a href="https://t.me/comingloots" target="_blank" id="telegram-float" class="float-btn">
+  <!-- Telegram Button Below -->
+  <a href="https://t.me/comingloots" target="_blank" id="telegram-button">
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+    Join Our Channel
   </a>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/919876543210" target="_blank" id="whatsapp-float" class="float-btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/WhatsApp.svg" alt="WhatsApp">
-  </a>
+  <!-- Text below Telegram button -->
+  <div id="telegram-text">
+    Join Our Channel For More Different Loots
+  </div>
 
 </body>
 </html>
