@@ -12,14 +12,13 @@
       overflow: hidden;
     }
 
-    /* Full page iframe */
     iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
 
-    /* Floating Telegram button (left side) */
+    /* Floating Telegram button */
     #telegram-float {
       position: fixed;
       bottom: 20px;
@@ -32,19 +31,55 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      box-shadow: 0 0 15px rgba(0, 136, 204, 0.6);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      animation: pulse 2.5s infinite;
+    }
+
+    /* Glow pulse animation */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px rgba(0, 136, 204, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 25px rgba(0, 136, 204, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(0, 136, 204, 0.5);
+      }
     }
 
     #telegram-float:hover {
       transform: scale(1.1);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     }
 
     #telegram-float img {
       width: 32px;
       height: 32px;
       filter: brightness(100%) invert(1);
+    }
+
+    /* Tooltip text */
+    #telegram-float::after {
+      content: "Join Telegram";
+      position: absolute;
+      left: 70px;
+      background: #0088cc;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    #telegram-float:hover::after {
+      opacity: 1;
     }
 
     @media (max-width: 480px) {
@@ -57,6 +92,9 @@
       #telegram-float img {
         width: 28px;
         height: 28px;
+      }
+      #telegram-float::after {
+        display: none; /* Hide tooltip on mobile */
       }
     }
   </style>
