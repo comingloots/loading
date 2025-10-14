@@ -3,64 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Job Pages</title>
+  <title>Job Page</title>
   <style>
-    body, html {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f5f5f5;
+      text-align: center;
     }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    a.site-link {
+      display: inline-block;
+      padding: 20px 30px;
+      background: #0b74de;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    /* Floating Telegram button */
-    #telegram-float {
+    a.site-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
+
+    /* Floating button common style */
+    .float-btn {
       position: fixed;
       bottom: 20px;
-      left: 20px;
       z-index: 9999;
-      background-color: #0088cc;
       border-radius: 50%;
       width: 60px;
       height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 15px rgba(0, 136, 204, 0.6);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
       animation: pulse 2.5s infinite;
     }
 
-    /* Glow pulse animation */
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 10px rgba(0, 136, 204, 0.5);
-      }
-      50% {
-        box-shadow: 0 0 25px rgba(0, 136, 204, 0.8);
-      }
-      100% {
-        box-shadow: 0 0 10px rgba(0, 136, 204, 0.5);
-      }
-    }
-
-    #telegram-float:hover {
-      transform: scale(1.1);
-    }
-
-    #telegram-float img {
+    .float-btn img {
       width: 32px;
       height: 32px;
       filter: brightness(100%) invert(1);
     }
 
-    /* Tooltip text */
+    .float-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    /* Telegram button */
+    #telegram-float {
+      left: 20px;
+      background-color: #0088cc;
+    }
+
     #telegram-float::after {
       content: "Join Telegram";
       position: absolute;
@@ -78,34 +85,71 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
-    #telegram-float:hover::after {
-      opacity: 1;
+    #telegram-float:hover::after { opacity: 1; }
+
+    /* WhatsApp button */
+    #whatsapp-float {
+      right: 20px;
+      background-color: #25d366;
+    }
+
+    #whatsapp-float::after {
+      content: "Chat on WhatsApp";
+      position: absolute;
+      right: 70px;
+      background: #25d366;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    #whatsapp-float:hover::after { opacity: 1; }
+
+    /* Pulse animation */
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+      50% { box-shadow: 0 0 25px rgba(0,0,0,0.35); }
+      100% { box-shadow: 0 0 10px rgba(0,0,0,0.2); }
     }
 
     @media (max-width: 480px) {
-      #telegram-float {
+      .float-btn {
         width: 52px;
         height: 52px;
         bottom: 15px;
-        left: 15px;
       }
-      #telegram-float img {
+      .float-btn img {
         width: 28px;
         height: 28px;
       }
-      #telegram-float::after {
-        display: none; /* Hide tooltip on mobile */
-      }
+      #telegram-float::after,
+      #whatsapp-float::after { display: none; }
     }
   </style>
 </head>
 <body>
-  <!-- Main site iframe -->
-  <iframe src="https://job.zhyv.today/" title="Job Site"></iframe>
+
+  <!-- Main button to open site -->
+  <a class="site-link" href="https://job.zhyv.today/" target="_blank">
+    Open Job Loots Site
+  </a>
 
   <!-- Telegram Floating Button -->
-  <a href="https://t.me/comingloots" target="_blank" id="telegram-float">
+  <a href="https://t.me/comingloots" target="_blank" id="telegram-float" class="float-btn">
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
   </a>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/919876543210" target="_blank" id="whatsapp-float" class="float-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
 </body>
 </html>
